@@ -48,7 +48,7 @@ RUN R -e "install.packages('plotly')"
 
 
 RUN R -e "remotes::install_github('xia-lab/MetaboAnalystR', build = TRUE, build_vignettes = FALSE);"
-RUN R -e "remotes::install_github('xia-lab/OptiLCMS', build = TRUE, build_vignettes = FALSE, build_manual =FALSE)
+RUN R -e "remotes::install_github('xia-lab/OptiLCMS', build = TRUE, build_vignettes = FALSE, build_manual =FALSE)"
 
 # Create user
 RUN useradd -ms /bin/bash docker
