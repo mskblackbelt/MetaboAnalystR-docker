@@ -1,0 +1,12 @@
+services:
+  rstudio:
+    build:
+      context: .  # assumes Dockerfile is in the same directory
+    container_name: metabo_container
+    ports:
+      - "8787:8787"
+    environment:
+      PASSWORD: rstudio  # login password for 'rstudio' user
+    volumes:
+      - ./rstudio-data:/home/rstudio  # optional: mount a host folder to persist files
+    restart: unless-stopped

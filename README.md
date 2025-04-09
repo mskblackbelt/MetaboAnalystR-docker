@@ -21,6 +21,14 @@ Our comprehensive benchmark studies show that MetaboAnalystR 4.0 can significant
 
 ## Getting Started
 
+### Docker instructions
+
+If you have Docker available, you can get started with the following command
+```docker
+docker-compose up -d
+```
+This should download all necessary files, build the container, then run it. Navigate to the resulting 
+
 ### Step 1. Install package dependencies 
 
 To use MetaboAnalystR 4.0, first install all package dependencies. Ensure that you have necessary system environment configured. 
