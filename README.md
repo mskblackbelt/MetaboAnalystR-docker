@@ -25,9 +25,12 @@ Our comprehensive benchmark studies show that MetaboAnalystR 4.0 can significant
 
 If you have Docker available, you can get started with the following command
 ```docker
-docker-compose up -d
+docker compose up -d
 ```
-This should download all necessary files, build the container, then run it. Navigate to the resulting 
+This should download all necessary files, build the container, then run it. Navigate to the resulting web server to get started. The username and password are both set to `rstudio` by default. When you're finished working, shut down the container with 
+```docker
+docker compose down
+```
 
 ### Step 1. Install package dependencies 
 
