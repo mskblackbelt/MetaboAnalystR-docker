@@ -14,15 +14,23 @@ RUN apt-get update \
         && rm -rf /var/lib/apt/lists/*
 
 # Install R libraries
-RUN R -e "install.packages(c('remotes', 'crmn, 'httr', 'qs')"
+RUN install2.r --error \
+    remotes \
+    httr \
+    qs \
+    BiocManager
+# RUN R -e "install.packages(c('remotes', 'crmn, 'httr', 'qs'))"
 
-RUN R -e "install.packages('BiocManager')"
-RUN R -e "BiocManager::install('impute', 'pcaMethods', 'globaltest', 'GlobalAncova',\ 
+RUN R -e "BiocManager::install(c('impute', 'crmn', 'globaltest', 'GlobalAncova',\ 
                                'Rgraphviz', 'preprocessCore', 'genefilter', 'SSPA',\ 
                                'sva', 'limma', 'KEGGgraph', 'siggenes', 'BiocParallel',\ 
-                               'MSnbase', 'multtest', 'RBGL', 'edgeR', 'fgsea', 'ctc')"
+                               'MSnbase', 'multtest', 'RBGL', 'edgeR', 'fgsea', 'ctc'))"
 
-RUN R -e "install.packages('glasso')", 'ppcor', 'huge', 'crmn', 'plotly')"
+RUN install2.r --error \
+    glasso \
+    ppcor \
+    huge \
+    plotly
 
 
 RUN R -e "remotes::install_github('xia-lab/MetaboAnalystR', build = TRUE, build_vignettes = FALSE);"
